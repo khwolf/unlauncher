@@ -89,4 +89,7 @@ class BinaryClockView(context: Context, attrs: AttributeSet) :
 
         setMeasuredDimension(w, h)
     }
+    fun setTo24h(use24h: Boolean = true) {
+        is24Hour = use24h
+    }
 }

@@ -206,6 +206,10 @@ class HomeFragment : BaseFragment(), OnLaunchAppListener {
         homeFragmentContent.homeFragmentTime.setOnClickListener(launchShowAlarms)
         homeFragmentContent.homeFragmentAnalogTime.setOnClickListener(launchShowAlarms)
         homeFragmentContent.homeFragmentBinTime.setOnClickListener(launchShowAlarms)
+        homeFragmentContent.homeFragmentBinTime.setTo24h(
+            context?.getSharedPreferences(getString(R.string.prefs_settings), Context.MODE_PRIVATE)
+                ?.getInt(getString(R.string.prefs_settings_key_time_format), 0) == 1
+        )
 
         homeFragmentContent.homeFragmentDate.setOnClickListener {
             try {
